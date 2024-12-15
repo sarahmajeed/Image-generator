@@ -2,6 +2,12 @@
 
 import OpenAI from "openai";
 
+export const maxDuration = 60;
+
+if (!process.env.OPENAI_API_KEY) {
+  throw new Error("Please set the OPENAI_API_KEY environment variable.");
+}
+
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
